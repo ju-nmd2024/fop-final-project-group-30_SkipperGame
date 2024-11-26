@@ -342,10 +342,23 @@ rotate(-34);
 line(0, 0, 30, 20);
 pop();
 
+push();
+translate(x + 10, y + 340);
+stroke(91, 153, 90);
+strokeWeight(25);
+angleMode(DEGREES);
+rotate(-34);
+line(0, 0, 30, 20);
+pop();
+
+
+
 
 
 
 }
+
+
 
 
 
