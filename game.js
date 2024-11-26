@@ -347,9 +347,41 @@ pop();
 
 }
 
+function bear() {
+  //bear body light
+  push();
+  translate(x - 44, y + 195);
+  fill(139, 86, 33);
+  ellipse(0, 0, 34, 38);
+  pop();
 
+  //bear head
+  push();
+  translate(x - 50, y + 195);
+  fill(102, 51, 0);
+  ellipse(0, 0, 30, 40);
+  pop();
+  
+  //bear ears
+  push();
+  translate(x - 61, y + 184);
+  fill(102, 51, 0);
+  ellipse(0, 0, 15, 15);
+  pop();
+
+  push();
+  translate(x - 61, y + 206);
+  fill(102, 51, 0);
+  ellipse(0, 0, 15, 15);
+  pop();
+
+
+
+
+}
 
 function draw() {
   background(207,196,97);
   maze(); 
+  bear();
 }
