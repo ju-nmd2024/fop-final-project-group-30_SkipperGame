@@ -391,10 +391,121 @@ function bear() {
 
 }
 
+function startScreen() {
+  //background
+  push();
+  fill(135, 206, 235);
+  rect(0, 0, 800, 600);
+  pop();
+
+  //Game title 
+  push();
+  fill(255);
+  textSize(50);
+  textAlign(CENTER, CENTER);
+  textFont('monospace');
+  textStyle(BOLDITALIC);
+  text("BEARBERRY CHASE", 400, 100);
+  pop();
+
+  //push button bar
+  push();
+  fill(135, 136, 265);
+  rect(280, 240, 230, 60, 20);
+  pop();
+
+  push();
+  fill(135, 136, 265);
+  rect(280, 340, 230, 60, 20);
+  pop();
+
+  //start button text
+  push();
+  fill(255);
+  textSize(32);
+  textAlign(CENTER, CENTER);
+  textFont('helvetica');
+  textStyle(BOLD);
+  text("PLAY", 393, 274);
+  pop();
+}
+
+function GameWin() {
+  //background 
+  push();
+  fill(135, 206, 235);
+  rect(0, 0, 800, 600);
+  pop();
+
+  //Win feedback text
+  push();
+  fill(255);
+  textSize(40);
+  textAlign(CENTER, CENTER);
+  textFont('monospace');
+  textStyle(BOLDITALIC);
+  text("YOU FOUND ALL THE BERRIES!", 400, 100);
+  pop();
+
+  push();
+  fill(255);
+  textSize(25);
+  textAlign(CENTER, CENTER);
+  textFont('monospace');
+  textStyle(BOLD);
+  text("Can you beat your time next round?", 400, 170);
+  pop();
+
+}
+
+function GameLose() {
+  //background
+  push();
+  fill(135, 206, 235);
+  rect(0, 0, 800, 600);
+  pop();
+
+  //Lose feedback text
+  push();
+  fill(255);
+  textSize(40);
+  textAlign(CENTER, CENTER);
+  textFont('monospace');
+  textStyle(BOLDITALIC);
+  text("Better luck next time...", 400, 100);
+  pop();
+
+}
+
+function restart() {
+  //restart button bar
+  push();
+  fill(135, 136, 265);
+  rect(280, 240, 230, 60, 20);
+  pop();
+
+  //restart text
+  push();
+  fill(255);
+  textSize(32);
+  textAlign(CENTER, CENTER);
+  textFont('helvetica');
+  textStyle(BOLD);
+  text("RETRY", 393, 274);
+  pop();
+
+
+}
+
+function gamePLay() {}
+
+
 
 
 function draw() {
   background(207,196,97);
   maze(); 
   bear();
+
+
 }
