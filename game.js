@@ -1,6 +1,8 @@
 let x= 100;
 let y= 100;
 
+let gameState = "start";
+
 function setup() {
   createCanvas(800, 600);
   noStroke();
@@ -10,6 +12,21 @@ function setup() {
 
 function maze() {
 //dirt floor
+
+//left side start ground
+push();
+translate(10, 260);
+fill(150, 121, 105);
+rect(0,0, 100, 75);
+pop();
+
+//right side end ground
+push();
+translate(700, 260);
+fill(150, 121, 105);
+rect(0,0, 100, 75);
+pop();
+
 push();
 translate(x, y);
 fill(150, 121, 105);
@@ -355,7 +372,6 @@ pop();
 
 
 
-
 }
 
 function bear() {
@@ -477,6 +493,17 @@ function GameLose() {
 
 }
 
+function goal() {
+  //game ends when player steps on the ground 
+
+  push();
+translate(740, 260);
+fill(120, 121, 105);
+rect(0,0, 60, 75);
+pop();
+
+}
+
 function restart() {
   //restart button bar
   push();
@@ -499,6 +526,8 @@ function restart() {
 
 
 
+
+
 function gamePLay() {}
 
 
@@ -509,5 +538,6 @@ function draw() {
   maze(); 
   bear();
 
+  goal();
 
 }
