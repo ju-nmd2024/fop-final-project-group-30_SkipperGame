@@ -547,14 +547,34 @@ function gamePlay() {
       y += 10;
     } else if (keyIsPressed && keyCode === 68) {
       x += 10;
-
     }   
   }
-  
   //game ends when player is inside goal
-
-  if ()
+  if (x + 44 > goalX && x + 44 < goalX + goalWidth && y + 195 > goalY && y + 195 < goalY + goalHeight) {
+    gameState = "win";
 }
+}
+  
+function mouseClicked() {
+
+  //click on start botton
+  if (gameState === "start" && 
+    mouseX > 280 &&
+    mouseX < 510 &&
+    mouseY > 240 &&
+    mouseY < 300 
+  ) {
+  gameState = "playing";  
+} else if ((gameState === "gameOver" || gameState === "gameSucceeded") &&
+    mouseX > 280 &&
+    mouseX < 510 &&
+    mouseY > 240 &&
+    mouseY < 300 
+  ) {
+  }
+  }
+
+
 
 
 
@@ -568,6 +588,30 @@ function draw() {
 
   
   //gameplay stages
+    //game stages
+    if (gameState === "start") {
+      startScreen();
+    } else if (gameState === "playing") {
+      gamePlay();
+    } else if (gameState === "gameOver") {
+      gameLose();
+      restart();
+    } else if (gameState === "gameSucceeded") {
+      gameWin();
+      restart();
+    }
 
+  //game stages
+  if (gameState === "start") {
+    startScreen();
+  } else if (gameState === "playing") {
+    gamePlay();
+  } else if (gameState === "gameOver") {
+    gameLose();
+    restart();
+  } else if (gameState === "gameSucceeded") {
+    gameWin();
+    restart();
+  }
 
 }
