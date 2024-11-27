@@ -1,6 +1,11 @@
 let x= 100;
 let y= 100;
 
+let goalX = x + 630;
+let goalY = y + 160;
+let goalWidth = 60;
+let goalHeeight = 75;
+
 let gameState = "start";
 
 function setup() {
@@ -10,19 +15,18 @@ function setup() {
   background(207,196,97);
 }
 
-function maze() {
-//dirt floor
+function ground() {
 
 //left side start ground
 push();
-translate(10, 260);
+translate(x - 90, y + 160);
 fill(150, 121, 105);
 rect(0,0, 100, 75);
 pop();
 
 //right side end ground
 push();
-translate(700, 260);
+translate(x + 590, y + 160);
 fill(150, 121, 105);
 rect(0,0, 100, 75);
 pop();
@@ -32,6 +36,10 @@ translate(x, y);
 fill(150, 121, 105);
 rect(0,0, 600, 400);
 pop();
+
+}
+
+function maze() {
 
 //bush maze FRAME
 push();
@@ -446,7 +454,7 @@ function startScreen() {
   pop();
 }
 
-function GameWin() {
+function gameWin() {
   //background 
   push();
   fill(135, 206, 235);
@@ -474,7 +482,7 @@ function GameWin() {
 
 }
 
-function GameLose() {
+function gameLose() {
   //background
   push();
   fill(135, 206, 235);
@@ -497,7 +505,7 @@ function goal() {
   //game ends when player steps on the ground 
 
   push();
-translate(740, 260);
+translate(x + 630, y + 160);
 fill(120, 121, 105);
 rect(0,0, 60, 75);
 pop();
@@ -526,18 +534,40 @@ function restart() {
 
 
 
+function gamePlay() {
+  bear();
+  if (gameState === "playing") {
+    
 
+    if (keyIsPressed && keyCode === 87) {
+      y -= 10;
+    } else if (keyIsPressed && keyCode === 65) {
+      x -= 10;
+    } else if (keyIsPressed && keyCode === 83) {
+      y += 10;
+    } else if (keyIsPressed && keyCode === 68) {
+      x += 10;
 
-function gamePLay() {}
+    }   
+  }
+  
+  //game ends when player is inside goal
+
+  if ()
+}
 
 
 
 
 function draw() {
   background(207,196,97);
-  maze(); 
+  ground();
   bear();
-
+  maze(); 
   goal();
+
+  
+  //gameplay stages
+
 
 }
