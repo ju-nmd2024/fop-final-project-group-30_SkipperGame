@@ -410,6 +410,12 @@ function bear() {
   ellipse(0, 0, 15, 15);
   pop();
 
+  //bear arms
+  push();
+  translate(x - 31, y + 184);
+  fill(102, 51, 0);
+  ellipse(0, 0, 25, 15);
+  pop();
 
 
 
