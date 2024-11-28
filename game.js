@@ -543,21 +543,22 @@ function restart() {
 function gamePlay() {
   bear();
   if (gameState === "playing") {
-    
-
-    if (keyIsPressed && keyCode === 87) {
-      y -= 10;
-    } else if (keyIsPressed && keyCode === 65) {
-      x -= 10;
-    } else if (keyIsPressed && keyCode === 83) {
-      y += 10;
-    } else if (keyIsPressed && keyCode === 68) {
+    if (keyIsDown(87)) {
+      y -=10;
+    }
+    if (keyIsDown(65)) {
+      x -=10;
+    }
+    if (keyIsDown(83)) {
+      y +=10;
+    }
+    if (keyIsDown(68)) {
       x += 10;
-    }   
+    }
   }
   //game ends when player is inside goal
   if (x + 44 > goalX && x + 44 < goalX + goalWidth && y + 195 > goalY && y + 195 < goalY + goalHeight) {
-    gameState = "win";
+    gameState = "gameSucceeded";
 }
 }
   
@@ -570,13 +571,21 @@ function mouseClicked() {
     mouseY > 240 &&
     mouseY < 300 
   ) {
-  gameState = "playing";  
+  gameState = "playing";
+  
+  x = 100;
+  y = 100;
+
 } else if ((gameState === "gameOver" || gameState === "gameSucceeded") &&
     mouseX > 280 &&
     mouseX < 510 &&
     mouseY > 240 &&
     mouseY < 300 
   ) {
+    gameState = "playing";
+
+    x = 100;
+    y = 100;
   }
   }
 
@@ -588,9 +597,9 @@ function mouseClicked() {
 function draw() {
   background(207,196,97);
   ground();
-  bear();
-  maze(); 
-  goal();
+  bear(x,y);
+  maze(x,y); 
+  goal(x,y);
 
   
   //gameplay stages
