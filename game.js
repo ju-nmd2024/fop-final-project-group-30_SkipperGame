@@ -383,12 +383,27 @@ pop();
 }
 
 function bear() {
+
   //bear body light
   push();
   translate(x - 44, y + 195);
   fill(139, 86, 33);
   ellipse(0, 0, 34, 38);
   pop();
+
+
+    //bear arms
+    push();
+    translate(x - 36, y + 180);
+    fill(77, 47, 17);
+    ellipse(0, 0, 16, 11);
+    pop();
+
+    push();
+    translate(x - 36, y + 209);
+    fill(77, 47, 17);
+    ellipse(0, 0, 16, 11);
+    pop();
 
   //bear head
   push();
@@ -410,14 +425,25 @@ function bear() {
   ellipse(0, 0, 15, 15);
   pop();
 
-  //bear arms
-  push();
-  translate(x - 31, y + 184);
-  fill(102, 51, 0);
-  ellipse(0, 0, 25, 15);
-  pop();
+   //bear nose
+ push();
+ translate(x - 36, y + 195);
+ fill(0);
+ ellipse(0, 0, 8, 10);
+ pop();
 
+    //bear eyes
+    push();
+    translate(x - 46, y + 187);
+    fill(0);
+    ellipse(0, 0, 5, 5);
+    pop();
 
+    push();
+    translate(x - 46, y + 203);
+    fill(0);
+    ellipse(0, 0, 5, 5);
+    pop();
 
 }
 
@@ -604,29 +630,7 @@ function draw() {
   
   //gameplay stages
     //game stages
-    if (gameState === "start") {
-      startScreen();
-    } else if (gameState === "playing") {
-      gamePlay();
-    } else if (gameState === "gameOver") {
-      gameLose();
-      restart();
-    } else if (gameState === "gameSucceeded") {
-      gameWin();
-      restart();
-    }
+    
 
-  //game stages
-  if (gameState === "start") {
-    startScreen();
-  } else if (gameState === "playing") {
-    gamePlay();
-  } else if (gameState === "gameOver") {
-    gameLose();
-    restart();
-  } else if (gameState === "gameSucceeded") {
-    gameWin();
-    restart();
-  }
-
+ 
 }
