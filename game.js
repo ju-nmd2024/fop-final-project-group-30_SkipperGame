@@ -447,6 +447,83 @@ function bear() {
 
 }
 
+function trap() {
+  //trap 1
+  push();
+  translate(x + 202, y + 100);
+  fill(192, 192, 192);
+  ellipse(0, 0, 25, 14);
+  pop();
+
+  push();
+  translate(x + 202, y + 100);
+  noFill();
+  stroke(64, 64, 64);
+  strokeWeight(3);
+  ellipse(0, 0, 25, 14);
+  pop();
+
+  //trap 2
+  push();
+  translate(x + 289, y + 343);
+  fill(192, 192, 192);
+  ellipse(0, 0, 25, 14);
+  pop();
+
+  push();
+  translate(x + 289, y + 343);
+  noFill();
+  stroke(64, 64, 64);
+  strokeWeight(3);
+  ellipse(0, 0, 25, 14);
+  pop();
+
+  //trap 3
+  push();
+  translate(x + 29, y + 315);
+  fill(192, 192, 192);
+  ellipse(0, 0, 25, 14);
+  pop();
+
+  push();
+  translate(x + 29, y + 315);
+  noFill();
+  stroke(64, 64, 64);
+  strokeWeight(3);
+  ellipse(0, 0, 25, 14);
+  pop();
+
+  //trap 4
+  push();
+  translate(x + 460, y + 80);
+  fill(192, 192, 192);
+  ellipse(0, 0, 25, 14);
+  pop();
+
+  push();
+  translate(x + 460, y + 80);
+  noFill();
+  stroke(64, 64, 64);
+  strokeWeight(3);
+  ellipse(0, 0, 25, 14);
+  pop();
+
+  //trap 5
+  push();
+  translate(x + 573, y + 367);
+  fill(192, 192, 192);
+  ellipse(0, 0, 25, 14);
+  pop();
+
+  push();
+  translate(x + 573, y + 367);
+  noFill();
+  stroke(64, 64, 64);
+  strokeWeight(3);
+  ellipse(0, 0, 25, 14);
+  pop();
+}
+
 function startScreen() {
   //background
   push();
@@ -626,6 +703,7 @@ function draw() {
   bear(x,y);
   maze(x,y); 
   goal(x,y);
+  trap(x,y);
 
   
   //gameplay stages
