@@ -103,7 +103,7 @@ pop();
 push();
 translate(x + 90, y + 310);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(24);
 angleMode(DEGREES);
 rotate(-123);
 line(0, 0, 30, 20);
@@ -112,7 +112,7 @@ pop();
 push();
 translate(x + 130, y + 315);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(29);
 angleMode(DEGREES);
 rotate(38);
 line(0, 0, 39, 50);
@@ -121,7 +121,7 @@ pop();
 push();
 translate(x + 90, y + 175);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(57);
 line(0, 0, 30, 20);
@@ -130,7 +130,7 @@ pop();
 push();
 translate(x + 170, y + 205);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(85);
 line(0, 0, 50, 5);
@@ -139,7 +139,7 @@ pop();
 push();
 translate(x + 210, y + 261);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(88);
 line(0, 0, 123, 5);
@@ -148,7 +148,7 @@ pop();
 push();
 translate(x + 130, y + 115);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(77);
 line(0, 0, 20, 5);
@@ -157,7 +157,7 @@ pop();
 push();
 translate(x + 230, y + 10 );
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(89);
 line(0, 0, 190, 5);
@@ -166,7 +166,7 @@ pop();
 push();
 translate(x + 300, y + 60 );
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(89);
 line(0, 0, 200, 5);
@@ -175,7 +175,7 @@ pop();
 push();
 translate(x + 270, y + 261);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(84);
 line(0, 0, 53, 5);
@@ -184,7 +184,7 @@ pop();
 push();
 translate(x + 370, y + 60 );
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(89);
 line(0, 0, 260, 5);
@@ -193,7 +193,7 @@ pop();
 push();
 translate(x + 430, y + 280 );
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(81);
 line(0, 0, 40, 5);
@@ -202,7 +202,7 @@ pop();
 push();
 translate(x + 490, y + 280 );
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(84);
 line(0, 0, 40, 5);
@@ -211,7 +211,7 @@ pop();
 push();
 translate(x + 430, y  );
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(87);
 line(0, 0, 100, 5);
@@ -220,7 +220,7 @@ pop();
 push();
 translate(x + 430, y + 160  );
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(85);
 line(0, 0, 60, 5);
@@ -230,7 +230,7 @@ pop();
 push();
 translate(x + 490, y + 60 );
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(89);
 line(0, 0, 160, 5);
@@ -239,7 +239,7 @@ pop();
 push();
 translate(x + 545, y + 60 );
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(89);
 line(0, 0, 160, 5);
@@ -248,7 +248,7 @@ pop();
 push();
 translate(x + 545, y + 320 );
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(85);
 line(0, 0, 60, 5);
@@ -262,7 +262,7 @@ pop();
 push();
 translate(x + 90, y + 310);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(-33);
 line(0, 0, 30, 20);
@@ -271,7 +271,7 @@ pop();
 push();
 translate(x + 105, y + 194);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(-50);
 line(0, 0, 40, 50);
@@ -280,7 +280,7 @@ pop();
 push();
 translate(x + 170, y + 260);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(-33);
 line(0, 0, 30, 20);
@@ -289,7 +289,7 @@ pop();
 push();
 translate(x + 20, y + 110);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(-2);
 line(0, 0, 109, 5);
@@ -298,7 +298,7 @@ pop();
 push();
 translate(x + 60, y + 55);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(-5);
 line(0, 0, 100, 10);
@@ -307,7 +307,7 @@ pop();
 push();
 translate(x + 270, y + 260);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(-25);
 line(0, 0, 20, 10);
@@ -316,7 +316,7 @@ pop();
 push();
 translate(x + 270, y + 320);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(-34);
 line(0, 0, 30, 20);
@@ -325,7 +325,7 @@ pop();
 push();
 translate(x + 380, y + 280);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(-34);
 line(0, 0, 30, 20);
@@ -334,7 +334,7 @@ pop();
 push();
 translate(x + 390, y + 100);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(-34);
 line(0, 0, 30, 20);
@@ -343,7 +343,7 @@ pop();
 push();
 translate(x + 442, y + 320);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(-34);
 line(0, 0, 30, 20);
@@ -352,7 +352,7 @@ pop();
 push();
 translate(x + 440, y + 160);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(-34);
 line(0, 0, 30, 20);
@@ -361,7 +361,7 @@ pop();
 push();
 translate(x + 560, y + 150);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(-34);
 line(0, 0, 30, 20);
@@ -370,7 +370,7 @@ pop();
 push();
 translate(x + 10, y + 340);
 stroke(91, 153, 90);
-strokeWeight(25);
+strokeWeight(20);
 angleMode(DEGREES);
 rotate(-34);
 line(0, 0, 30, 20);
@@ -644,25 +644,47 @@ function restart() {
 
 
 function gamePlay() {
-  bear();
-  if (gameState === "playing") {
-    if (keyIsDown(87)) {
-      y -=10;
-    }
-    if (keyIsDown(65)) {
-      x -=10;
-    }
-    if (keyIsDown(83)) {
-      y +=10;
-    }
-    if (keyIsDown(68)) {
-      x += 10;
-    }
+bear(x,y);
+  if (keyIsDown(87)) { // 'W' key
+    y -= 10;
   }
+  if (keyIsDown(65)) { // 'A' key
+    x -= 10;
+  }
+  if (keyIsDown(83)) { // 'S' key
+    y += 10;
+  }
+  if (keyIsDown(68)) { // 'D' key
+    x += 10;
+  }
+  
+
+
+ 
+  if (gameState === "start") {
+    startScreen();
+  } else if (gameState === "playing") {
+    gamePlay();
+  } else if (gameState === "gameOver") {
+    gameLose();
+    restart();
+  } else if (gameState === "gameSucceeded") {
+    gameWin();
+    restart();
+  }
+
   //game ends when player is inside goal
-  if (x + 44 > goalX && x + 44 < goalX + goalWidth && y + 195 > goalY && y + 195 < goalY + goalHeight) {
+  if (
+    x + 44 > goalX && 
+    x + 44 < goalX + goalWidth &&
+    y + 195 > goalY && 
+    y + 195 < goalY + goalHeight
+  ) {
     gameState = "gameSucceeded";
 }
+
+bear(x,y);
+
 }
   
 function mouseClicked() {
@@ -694,21 +716,29 @@ function mouseClicked() {
 
 
 
-
-
-
 function draw() {
   background(207,196,97);
   ground();
-  bear(x,y);
   maze(x,y); 
   goal(x,y);
   trap(x,y);
 
+ 
+
   
   //gameplay stages
-    //game stages
-    
+  
+  if (gameState === "start") {
+    startScreen();
+  } else if (gameState === "playing") {
+    gamePlay();
+  } else if (gameState === "gameOver") {
+    gameLose();
+    restart();
+  } else if (gameState === "gameSucceeded") {
+    gameWin();
+    restart();
+  }
 
  
 }
