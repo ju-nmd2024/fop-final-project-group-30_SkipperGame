@@ -461,6 +461,7 @@ function trap() {
   stroke(64, 64, 64);
   strokeWeight(3);
   ellipse(0, 0, 25, 14);
+
   pop();
 
   //trap 2
@@ -661,17 +662,7 @@ bear(x,y);
 
 
  
-  if (gameState === "start") {
-    startScreen();
-  } else if (gameState === "playing") {
-    gamePlay();
-  } else if (gameState === "gameOver") {
-    gameLose();
-    restart();
-  } else if (gameState === "gameSucceeded") {
-    gameWin();
-    restart();
-  }
+ 
 
   //game ends when player is inside goal
   if (
@@ -682,8 +673,6 @@ bear(x,y);
   ) {
     gameState = "gameSucceeded";
 }
-
-bear(x,y);
 
 }
   
