@@ -4,7 +4,7 @@ let y= 100;
 let goalX = x + 630;
 let goalY = y + 160;
 let goalWidth = 60;
-let goalHeeight = 75;
+let goalHeight = 75;
 
 let gameState = "playing";
 
@@ -33,7 +33,7 @@ class ground {
   constructor(x,y) {
       push();
       fill(150, 121, 105);
-      rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileeSize_Y);
+      rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileSize_Y);
       strokeWeight(20);
       angleMode(DEGREES);
       pop();
@@ -55,7 +55,7 @@ class goal {
   constructor(x, y){
       push();
       fill(25, 25, 25);
-      rect(x * spriteSize_X, y * spriteSize_Y, spriteSize_X, spriteSize_Y);
+      rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileSize_Y);
       strokeWeight(20);
       angleMode(DEGREES);
       pop();
@@ -67,17 +67,53 @@ class goal {
 //map arrays
 
 let map = [
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-[1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-[1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-[1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+  [1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+  [1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+  [2, 2, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 2, 2],
+  [2, 2, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 2, 2],
+  [2, 2, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 2, 2],
+  [1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1],
+  [1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1],
+  [1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1],
+  [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 ];
 
 const tileSize_X = 32;
 const tileSize_Y = 32;
 
+function maze() {
+
+  for (let i = 0; i < map.length; i++) {
+      for (let j = 0; j < map[i].length; j++) {
+          if(map[i][j] === 0)
+          {
+              new ground(j, i);
+          }
+          if(map[i][j] === 1)
+          {
+              new bush(j, i);
+          }
+          if(map[i][j] === 2)
+          {
+              new start(j, i);
+          }
+          if(map[i][j] === 3)
+          {
+              new goal(j, i);
+          }
+      }
+  }
+}
 
 
 function bear() {
@@ -143,84 +179,6 @@ function bear() {
     ellipse(0, 0, 5, 5);
     pop();
 
-}
-
-function trap() {
-  //trap 1
-  push();
-  translate(x + 202, y + 100);
-  fill(192, 192, 192);
-  ellipse(0, 0, 25, 14);
-  pop();
-
-  push();
-  translate(x + 202, y + 100);
-  noFill();
-  stroke(64, 64, 64);
-  strokeWeight(3);
-  ellipse(0, 0, 25, 14);
-
-  pop();
-
-  //trap 2
-  push();
-  translate(x + 289, y + 343);
-  fill(192, 192, 192);
-  ellipse(0, 0, 25, 14);
-  pop();
-
-  push();
-  translate(x + 289, y + 343);
-  noFill();
-  stroke(64, 64, 64);
-  strokeWeight(3);
-  ellipse(0, 0, 25, 14);
-  pop();
-
-  //trap 3
-  push();
-  translate(x + 29, y + 315);
-  fill(192, 192, 192);
-  ellipse(0, 0, 25, 14);
-  pop();
-
-  push();
-  translate(x + 29, y + 315);
-  noFill();
-  stroke(64, 64, 64);
-  strokeWeight(3);
-  ellipse(0, 0, 25, 14);
-  pop();
-
-  //trap 4
-  push();
-  translate(x + 460, y + 80);
-  fill(192, 192, 192);
-  ellipse(0, 0, 25, 14);
-  pop();
-
-  push();
-  translate(x + 460, y + 80);
-  noFill();
-  stroke(64, 64, 64);
-  strokeWeight(3);
-  ellipse(0, 0, 25, 14);
-  pop();
-
-  //trap 5
-  push();
-  translate(x + 573, y + 367);
-  fill(192, 192, 192);
-  ellipse(0, 0, 25, 14);
-  pop();
-
-  push();
-  translate(x + 573, y + 367);
-  noFill();
-  stroke(64, 64, 64);
-  strokeWeight(3);
-  ellipse(0, 0, 25, 14);
-  pop();
 }
 
 function startScreen() {
@@ -394,7 +352,8 @@ function mouseClicked() {
 
 function draw() {
   background(207,196,97);
-  trap(x,y);
+  maze(x, y);
+  
 
  
 
