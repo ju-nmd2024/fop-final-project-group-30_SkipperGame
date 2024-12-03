@@ -17,19 +17,20 @@ function setup() {
 
 
 //classes
+
 class bush {
-  
+  constructor(x, y){
       push();
       fill(0, 255, 0);
       rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileSize_Y);
       strokeWeight(20);
       angleMode(DEGREES);
       pop();
-  
+  }
 }
 
 class ground {
-  
+  constructor(x,y) {
       push();
       fill(150, 121, 105);
       rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileeSize_Y);
@@ -37,6 +38,32 @@ class ground {
       angleMode(DEGREES);
       pop();
   }
+}
+
+class start {
+  constructor(x, y){
+      push();
+      fill(150, 121, 105);
+      rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileSize_Y);
+      strokeWeight(20);
+      angleMode(DEGREES);
+      pop();
+  }
+}
+
+class goal {
+  constructor(x, y){
+      push();
+      fill(25, 25, 25);
+      rect(x * spriteSize_X, y * spriteSize_Y, spriteSize_X, spriteSize_Y);
+      strokeWeight(20);
+      angleMode(DEGREES);
+      pop();
+  }
+}
+
+
+
 //map arrays
 
 let map = [
@@ -50,6 +77,8 @@ let map = [
 
 const tileSize_X = 32;
 const tileSize_Y = 32;
+
+
 
 function bear() {
 
@@ -280,17 +309,6 @@ function gameLose() {
 
 }
 
-function goal() {
-  //game ends when player steps on the ground 
-
-  push();
-translate(x + 630, y + 160);
-fill(120, 121, 105);
-rect(0,0, 60, 75);
-pop();
-
-}
-
 function restart() {
   //restart button bar
   push();
@@ -376,8 +394,6 @@ function mouseClicked() {
 
 function draw() {
   background(207,196,97);
-   
-  goal(x,y);
   trap(x,y);
 
  
