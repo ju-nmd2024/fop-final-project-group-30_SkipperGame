@@ -43,7 +43,7 @@ class ground {
 class start {
   constructor(x, y){
       push();
-      fill(150, 121, 105);
+      fill(150, 191, 105);
       rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileSize_Y);
       strokeWeight(20);
       angleMode(DEGREES);
@@ -64,27 +64,27 @@ class goal {
 
 
 
-//map arrays
+//map 2D arrays
 
 let map = [
   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
-  [1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
-  [1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
-  [2, 2, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 2, 2],
-  [2, 2, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 2, 2],
-  [2, 2, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 2, 2],
-  [1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1],
+  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1],
+  [1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1],
+  [1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1],
+  [1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1],
+  [2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 3],
+  [1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1],
+  [1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1],
   [1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1],
-  [1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1],
-  [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+  [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1],
+  [1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 ];
 
@@ -115,71 +115,135 @@ function maze() {
   }
 }
 
+//bear hitbox collision detector 
+const bearOffsetX = 24;
+const bearOffsetY = 0;
+const bearHitboxX = 28;
+const bearHitboxY = 28;
 
-function bear() {
+const safeTiles = [0, 2, 3];
+const blockedTiles = [1];
+
+//bear class
+
+class Bear {
+
+  constructor(x,y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  //bear movement in x- positions
+  moveX(x) {
+    const newX = this.x + x;
+
+    if (this.colide(newX, this.x) === false)
+    {
+      this.x = x;
+    }
+  }
+
+  //bear movement in y- positions
+  moveY(y) {
+    const newY = this.y + y;
+
+    if (this.colide(this.x, newY) === false)
+    {
+      this.y +=y;
+    }
+  }
+
+  colide(x, y){
+
+    let c1 = map[Math.floor(y / 32)][Math.floor(x / 32)];
+    let c2 = map[Math.floor(y / 32)][Math.floor((x + bearHitboxX) / 32)];
+    let c3 = map[Math.floor((y + bearHitboxY) / 32)][Math.floor(x / 32)];
+    let c4 = map[Math.floor((y + bearHitboxY) / 32)][Math.floor((x + bearHitboxX) / 32)];
+    
+
+    
+		if ([c1,c2,c3,c4].includes(2)){
+			
+			console.log("GOAL!");
+		}
+    return [c1, c2, c3, c4].some(value => blockedTiles.includes(value));
+  }
+
+  draw() {
+    push();
+  fill(0, 255, 0);
+  rect(this.x, this.y, bearHitboxX, bearHitboxY);
+  strokeWeight(20);
+  angleMode(DEGREES);
+  pop();
 
   //bear body light
   push();
-  translate(x - 44, y + 195);
+  translate(this.x - 8 + bearOffsetX, this.y + 15 + bearOffsetY);
   fill(139, 86, 33);
   ellipse(0, 0, 34, 38);
   pop();
 
 
-    //bear arms
-    push();
-    translate(x - 36, y + 180);
-    fill(77, 47, 17);
-    ellipse(0, 0, 16, 11);
-    pop();
+  //bear arms
+  push();
+  translate(this.x + bearOffsetX, this.y + bearOffsetY);
+  fill(77, 47, 17);
+  ellipse(0, 0, 16, 11);
+  pop();
 
-    push();
-    translate(x - 36, y + 209);
-    fill(77, 47, 17);
-    ellipse(0, 0, 16, 11);
-    pop();
+  push();
+  translate(this.x + bearOffsetX, this.y + 29 + bearOffsetY);
+  fill(77, 47, 17);
+  ellipse(0, 0, 16, 11);
+  pop();
 
   //bear head
   push();
-  translate(x - 50, y + 195);
+  translate(this.x - 14 + bearOffsetX, this.y + 15 + bearOffsetY);
   fill(102, 51, 0);
   ellipse(0, 0, 30, 40);
   pop();
-  
+
   //bear ears
   push();
-  translate(x - 61, y + 184);
+  translate(this.x - 25 + bearOffsetX, this.y + 4 + bearOffsetY);
   fill(102, 51, 0);
   ellipse(0, 0, 15, 15);
   pop();
 
   push();
-  translate(x - 61, y + 206);
+  translate(this.x - 25 + bearOffsetX, this.y + 26 + bearOffsetY);
   fill(102, 51, 0);
   ellipse(0, 0, 15, 15);
   pop();
 
-   //bear nose
- push();
- translate(x - 36, y + 195);
- fill(0);
- ellipse(0, 0, 8, 10);
- pop();
+  //bear nose
+  push();
+  translate(this.x + bearOffsetX, this.y + 15 + bearOffsetY);
+  fill(0);
+  ellipse(0, 0, 8, 10);
+  pop();
 
-    //bear eyes
-    push();
-    translate(x - 46, y + 187);
-    fill(0);
-    ellipse(0, 0, 5, 5);
-    pop();
+  //bear eyes
+  push();
+  translate(this.x - 10 + bearOffsetX, this.y + 7 + bearOffsetY);
+  fill(0);
+  ellipse(0, 0, 5, 5);
+  pop();
 
-    push();
-    translate(x - 46, y + 203);
-    fill(0);
-    ellipse(0, 0, 5, 5);
-    pop();
+  push();
+  translate(this.x - 10 + bearOffsetX, this.y + 23 + bearOffsetY);
+  fill(0);
+  ellipse(0, 0, 5, 5);
+  pop();
 
+  }
 }
+
+
+
+
 
 function startScreen() {
   //background
@@ -202,11 +266,6 @@ function startScreen() {
   push();
   fill(135, 136, 265);
   rect(280, 240, 230, 60, 20);
-  pop();
-
-  push();
-  fill(135, 136, 265);
-  rect(280, 340, 230, 60, 20);
   pop();
 
   //start button text
@@ -290,20 +349,24 @@ function restart() {
 
 
 function gamePlay() {
-bear(x,y);
+  
+  let newX = x;
+  let newY = y;
+
   if (keyIsDown(87)) { // 'W' key
-    y -= 10;
-  }
-  if (keyIsDown(65)) { // 'A' key
-    x -= 10;
-  }
-  if (keyIsDown(83)) { // 'S' key
-    y += 10;
-  }
-  if (keyIsDown(68)) { // 'D' key
-    x += 10;
+        bear.moveY(-5);
+    }
+    if (keyIsDown(65)) { // 'A' key
+        bear.moveX(-5);
+    }
+    if (keyIsDown(83)) { // 'S' key
+        bear.moveY(5);
+    }
+    if (keyIsDown(68)) { // 'D' key
+        bear.moveX(5);
   }
   
+
 
 
  
@@ -353,6 +416,8 @@ function mouseClicked() {
 function draw() {
   background(207,196,97);
   maze(x, y);
+
+  Bear.draw();
   
 
  
