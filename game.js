@@ -97,9 +97,10 @@ class Bear {
 
     if ([c1, c2, c3, c4].includes(5)) {
       console.log("berry");
-      berries.splice(j * tileSize_X, i * tileSize_Y, 1);
-    }
 
+      berries.splice(berry1, 1); 
+    } 
+ 
     if ([c1, c2, c3, c4].includes(4)) {
       gameState = "gameOver";
       return true;
