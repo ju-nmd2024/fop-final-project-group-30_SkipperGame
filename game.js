@@ -1,6 +1,7 @@
 let x= 100;
 let y= 100;
 
+
 let goalX = x + 630;
 let goalY = y + 160;
 let goalWidth = 60;
@@ -17,115 +18,6 @@ function setup() {
 
 
 //classes
-
-class bush {
-  constructor(x, y){
-      push();
-      fill(0, 255, 0);
-      rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileSize_Y);
-      strokeWeight(20);
-      angleMode(DEGREES);
-      pop();
-  }
-}
-
-class ground {
-  constructor(x,y) {
-      push();
-      fill(150, 121, 105);
-      rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileSize_Y);
-      strokeWeight(20);
-      angleMode(DEGREES);
-      pop();
-  }
-}
-
-class start {
-  constructor(x, y){
-      push();
-      fill(150, 191, 105);
-      rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileSize_Y);
-      strokeWeight(20);
-      angleMode(DEGREES);
-      pop();
-  }
-}
-
-class goal {
-  constructor(x, y){
-      push();
-      fill(25, 25, 25);
-      rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileSize_Y);
-      strokeWeight(20);
-      angleMode(DEGREES);
-      pop();
-  }
-}
-
-
-
-//map 2D arrays
-
-let map = [
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1],
-  [1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1],
-  [1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1],
-  [1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1],
-  [2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 3],
-  [1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1],
-  [1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1],
-  [1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1],
-  [1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
-  [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1],
-  [1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-];
-
-const tileSize_X = 32;
-const tileSize_Y = 32;
-
-function maze() {
-
-  for (let i = 0; i < map.length; i++) {
-      for (let j = 0; j < map[i].length; j++) {
-          if(map[i][j] === 0)
-          {
-              new ground(j, i);
-          }
-          if(map[i][j] === 1)
-          {
-              new bush(j, i);
-          }
-          if(map[i][j] === 2)
-          {
-              new start(j, i);
-          }
-          if(map[i][j] === 3)
-          {
-              new goal(j, i);
-          }
-      }
-  }
-}
-
-//bear hitbox collision detector 
-const bearOffsetX = 24;
-const bearOffsetY = 0;
-const bearHitboxX = 28;
-const bearHitboxY = 28;
-
-const safeTiles = [0, 2, 3];
-const blockedTiles = [1];
-
-//bear class
-
 class Bear {
 
   constructor(x,y) {
@@ -135,22 +27,22 @@ class Bear {
 
   //bear movement in x- positions
   moveX(x) {
-    const newX = this.x + x;
 
-    if (this.colide(newX, this.x) === false)
-    {
-      this.x = x;
+    const newX = this.x + x;
+    if (this.colide(newX, this.y) === false) {
+      this.x = newX;
     }
+    
   }
 
   //bear movement in y- positions
   moveY(y) {
     const newY = this.y + y;
 
-    if (this.colide(this.x, newY) === false)
-    {
-      this.y +=y;
+    if (this.colide(this.x, newY) === false) {
+      this.y = newY;
     }
+
   }
 
   colide(x, y){
@@ -241,8 +133,116 @@ class Bear {
   }
 }
 
+const bear = new Bear(64, 64);
 
 
+class bush {
+  constructor(x, y){
+      push();
+      fill(0, 255, 0);
+      rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileSize_Y);
+      strokeWeight(20);
+      angleMode(DEGREES);
+      pop();
+  }
+}
+
+class ground {
+  constructor(x,y) {
+      push();
+      fill(150, 121, 105);
+      rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileSize_Y);
+      strokeWeight(20);
+      angleMode(DEGREES);
+      pop();
+  }
+}
+
+class start {
+  constructor(x, y){
+      push();
+      fill(150, 191, 105);
+      rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileSize_Y);
+      strokeWeight(20);
+      angleMode(DEGREES);
+      pop();
+  }
+}
+
+class goal {
+  constructor(x, y){
+      push();
+      fill(25, 25, 25);
+      rect(x * tileSize_X, y * tileSize_Y, tileSize_X, tileSize_Y);
+      strokeWeight(20);
+      angleMode(DEGREES);
+      pop();
+  }
+}
+
+
+
+//map 2D arrays
+
+let map = [
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1],
+  [1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1],
+  [1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1],
+  [1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1],
+  [2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 3],
+  [1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1],
+  [1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1],
+  [1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1],
+  [1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+  [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1],
+  [1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+];
+
+const tileSize_X = 32;
+const tileSize_Y = 32;
+
+ 
+
+function maze() {
+
+  for (let i = 0; i < map.length; i++) {
+      for (let j = 0; j < map[i].length; j++) {
+          if(map[i][j] === 0)
+          {
+              new ground(j, i);
+          }
+          if(map[i][j] === 1)
+          {
+              new bush(j, i);
+          }
+          if(map[i][j] === 2)
+          {
+              new start(j, i);
+          }
+          if(map[i][j] === 3)
+          {
+              new goal(j, i);
+          }
+      }
+  }
+}
+
+//bear hitbox collision detector 
+const bearOffsetX = 24;
+const bearOffsetY = 0;
+const bearHitboxX = 28;
+const bearHitboxY = 28;
+
+const safeTiles = [0, 2, 3];
+const blockedTiles = [1];
 
 
 function startScreen() {
@@ -365,11 +365,6 @@ function gamePlay() {
     if (keyIsDown(68)) { // 'D' key
         bear.moveX(5);
   }
-  
-
-
-
- 
  
 
   //game ends when player is inside goal
@@ -417,7 +412,7 @@ function draw() {
   background(207,196,97);
   maze(x, y);
 
-  Bear.draw();
+  bear.draw();
   
 
  
