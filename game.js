@@ -7,7 +7,7 @@ let goalY = y + 160;
 let goalWidth = 60;
 let goalHeight = 75;
 
-let gameState = "playing";
+let gameState = "start";
 
 function setup() {
   createCanvas(800, 600);
