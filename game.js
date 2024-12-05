@@ -7,7 +7,7 @@ let goalY = y + 160;
 let goalWidth = 60;
 let goalHeight = 75;
 
-let gameState = "playing";
+let gameState = "start";
 
 function setup() {
   createCanvas(800, 600);
@@ -19,10 +19,11 @@ function setup() {
 
 //classes
 class Bear {
+  
 
   constructor(x,y) {
-    this.x = x;
-    this.y = y;
+    this.x = 0;
+    this.y = 290;
   }
 
   //bear movement in x- positions
@@ -56,7 +57,7 @@ class Bear {
     
 		if ([c1,c2,c3,c4].includes(2)){
 			
-			console.log("GOAL!");
+			console.log("start!");
 		}
     return [c1, c2, c3, c4].some(value => blockedTiles.includes(value));
   }
