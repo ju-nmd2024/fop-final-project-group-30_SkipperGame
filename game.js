@@ -41,7 +41,7 @@ let map = [
   [1, 0, 0, 4, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
   [1, 0, 0, 1, 1, 1, 5, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1],
   [1, 4, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 4, 0, 1, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 1, 0, 4, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1],
   [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 4, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1],
   [1, 1, 1, 1, 1, 4, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1],
   [1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 4, 1, 1, 1, 1, 1, 1, 0, 1, 1],
@@ -50,7 +50,7 @@ let map = [
   [1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 4, 1, 1, 1, 1],
   [1, 0, 0, 1, 1, 1, 0, 5, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1],
   [1, 0, 0, 1, 0, 1, 4, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
-  [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 4, 1],
+  [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 4, 1],
   [1, 4, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 5, 0, 1],
   [1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 1, 1, 0, 0, 1],
   [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -94,18 +94,27 @@ class Bear {
     if ([c1, c2, c3, c4].includes(2)) {
       console.log("start!");
     }
+    
+    if ([c1, c2, c3, c4].includes(3)) {
+      gameState = "GameSuceeded";
+      console.log("you have reached goal!");
+    }
 
     if ([c1, c2, c3, c4].includes(5)) {
       console.log("berry");
-
-      berries.splice(berry1, 1); 
+      for (let berry of berries) {
+        berries.splice(berries.indexOf(berry), 1); 
+      }
     } 
  
     if ([c1, c2, c3, c4].includes(4)) {
+    
       gameState = "gameOver";
       return true;
     }
     return [c1, c2, c3, c4].some((value) => blockedTiles.includes(value));
+
+
   }
   draw() {
     push();
@@ -175,7 +184,7 @@ class Bear {
     ellipse(0, 0, 5, 5);
     pop();
   }
-}
+  }
 
 //instance of bear
 const bear = new Bear(bearX, bearY);
@@ -329,6 +338,7 @@ function startScreen() {
   pop();
 }
 
+
 function gameWin() {
   //background
   push();
@@ -415,10 +425,10 @@ function gamePlay() {
 
   //game ends when player is inside goal
   if (
-    x + 44 > goalX &&
-    x + 44 < goalX + goalWidth &&
-    y + 195 > goalY &&
-    y + 195 < goalY + goalHeight
+    bear.x + bear.width > goalX &&
+    bear.x < goalX + goalWidth &&
+    bear.y + bear.height > goalY &&
+    bear.y < goalY + goalHeight
   ) {
     gameState = "gameSucceeded";
   }
