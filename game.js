@@ -362,6 +362,7 @@ function draw() {
    homeButton.draw();
   } else if (gameState === "gameOver") {
     gameLose();
+    homeButton.draw();
     restartButton.draw();
   }
 
