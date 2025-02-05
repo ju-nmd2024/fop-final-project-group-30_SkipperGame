@@ -7,7 +7,7 @@ let score = 0;
 
 
 //line 9 of the code is added by courtesy of Stefan La
-let logSafeAreaBoarderWidth = 5;
+let logSafeAreaBoarderWidth = 35;
 
 function setup() {
   createCanvas(800, 600);
