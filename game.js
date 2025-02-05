@@ -360,6 +360,7 @@ function draw() {
     gameWin();
    restartButton.draw();
    homeButton.draw();
+   
   } else if (gameState === "gameOver") {
     gameLose();
     homeButton.draw();
