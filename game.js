@@ -1,13 +1,13 @@
 let startX = 400;
 let startY = 570;
 let gameState = "start";
-let startLives = 2;
+let startLives = 2; 
 let gameLives = startLives;
 let score = 0;
 
 
 //line 9 of the code is added by courtesy of Stefan La
-let logSafeAreaBoarderWidth = 10;
+let logSafeAreaBoarderWidth = 5;
 
 function setup() {
   createCanvas(800, 600);
@@ -212,6 +212,7 @@ class Button {
 
 const startButton = new Button(300, 200, 200, 50, "Press to start");
 const restartButton = new Button(300, 200, 200, 50, "Restart Game");
+const homeButton = new Button(300, 300, 200, 50, "Return to Start");
 
 class Obstacle {
   constructor(x, y, width, height, r, g, b, speed, addSpeed) {
@@ -306,8 +307,10 @@ function mousePressed() {
     gameLives = startLives;
     score = 0;
   }
+  if (homeButton.isPressed(mouseX, mouseY)) {
+    gameState = "start";
+  }
 }
-
 
 function drawLives() {
   //The following 5 lines is adapted from https://chatgpt.com/share/67a14f4c-3f04-8008-a84e-5b77d81cf43f
@@ -356,7 +359,7 @@ function draw() {
   } else if (gameState === "gameSucceeded") {
     gameWin();
    restartButton.draw();
-   
+   homeButton.draw();
   } else if (gameState === "gameOver") {
     gameLose();
     restartButton.draw();
