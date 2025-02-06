@@ -1,10 +1,9 @@
 let startX = 400;
 let startY = 570;
 let gameState = "start";
-let startLives = 2; 
+let startLives = 2;
 let gameLives = startLives;
 let score = 0;
-
 
 //line 9 of the code is added by courtesy of Stefan La
 let logSafeAreaBoarderWidth = 35;
@@ -17,7 +16,7 @@ function setup() {
 
 class character {
   constructor(x, y, width, height) {
-    this.x = x;  
+    this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
@@ -25,7 +24,7 @@ class character {
 
   draw() {
     push();
-    fill(154,205,50);
+    fill(154, 205, 50);
     square(this.x, this.y, this.width);
     pop();
   }
@@ -35,70 +34,64 @@ class character {
     this.y += y;
   }
 
-  
   update() {
-  // The following 10 lines of the code is added by ourtesy of Stefan La
+    // The following 10 lines of the code is added by ourtesy of Stefan La
 
-  //checking if character moves with the log otherwise character dies
-  let onLog = false;
-  
-  if (this.y < 200 && this.y > 100) {
-   for (let i = 0; i < logs.length; i++) {
-    let currentLog = logs[i];
+    //checking if character moves with the log otherwise character dies
+    let onLog = false;
 
-  if (
-    this.x + this.width > currentLog.x + logSafeAreaBoarderWidth &&
-    this.x < currentLog.x + currentLog.width - logSafeAreaBoarderWidth
-  ) 
-  {
- //character moves with the log if character is on it
-    this.x -= currentLog.speed;
-    onLog = true;
-  }
- }
+    if (this.y < 200 && this.y > 100) {
+      for (let i = 0; i < logs.length; i++) {
+        let currentLog = logs[i];
 
- //character dies if fallen into water
-if (!onLog) {
-  console.log("DROWNED");
-  if (gameLives === 0) {
-    gameState = "gameOver";
-  } else {
-    gameLives -= 1;
-    this.x = startX;
-    this.y = startY;
-  }
- }
+        if (
+          this.x + this.width > currentLog.x + logSafeAreaBoarderWidth &&
+          this.x < currentLog.x + currentLog.width - logSafeAreaBoarderWidth
+        ) {
+          //character moves with the log if character is on it
+          this.x -= currentLog.speed;
+          onLog = true;
+        }
+      }
 
-}
-  if (keyIsDown(UP_ARROW)) {
-    this.move(0, -5);
-  }
-  if (keyIsDown(DOWN_ARROW)) {
-    this.move(0, 5);
-  }
-  if (keyIsDown(LEFT_ARROW)) {
-    this.move(-5, 0);
-  }
-  if (keyIsDown(RIGHT_ARROW)) {
-    this.move(5, 0);
-  } 
+      //character dies if fallen into water
+      if (!onLog) {
+        console.log("DROWNED");
+        if (gameLives === 0) {
+          gameState = "gameOver";
+        } else {
+          gameLives -= 1;
+          this.x = startX;
+          this.y = startY;
+        }
+      }
+    }
+    if (keyIsDown(UP_ARROW)) {
+      this.move(0, -5);
+    }
+    if (keyIsDown(DOWN_ARROW)) {
+      this.move(0, 5);
+    }
+    if (keyIsDown(LEFT_ARROW)) {
+      this.move(-5, 0);
+    }
+    if (keyIsDown(RIGHT_ARROW)) {
+      this.move(5, 0);
+    }
 
-
-    //player gains a point, after 3 points player wins. 
-     if (this.y < 40) {
+    //player gains a point, after 3 points player wins.
+    if (this.y < 40) {
       score++;
       character1.x = startX;
       character1.y = startY;
-     }
-     if(score === 3) {
+    }
+    if (score === 3) {
       gameState = "gameSucceeded";
       character1.x = startX;
       character1.y = startY;
-      
-     }  
-    
     }
- } 
+  }
+}
 
 const character1 = new character(350, 550, 50, 50);
 
@@ -136,7 +129,7 @@ function water() {
 
 function startscreen() {
   push();
-  background(255,211,182);
+  background(255, 211, 182);
   fill(0);
   textSize(30);
   text("Skipper Game", 300, 150);
@@ -151,12 +144,12 @@ function startscreen() {
   push();
   fill(0);
   textSize(100);
-  text("🐸", 330,450);
+  text("🐸", 330, 450);
   pop();
 }
 function gameWin() {
   push();
-  background(220,237,193);
+  background(220, 237, 193);
   fill(0);
   textSize(30);
   text("You Succeeded!", 300, 150);
@@ -165,7 +158,7 @@ function gameWin() {
 
 function gameLose() {
   push();
-  background(255,139,148);
+  background(255, 139, 148);
   fill(0);
   textSize(30);
   text("You Have Lost", 300, 150);
@@ -261,10 +254,10 @@ class Obstacle {
   }
 }
 
-const obstacle1 = new Obstacle(50, 400, 100, 100, 217, 59, 58 , 8, 1);
-const obstacle2 = new Obstacle(50, 200, 100, 100, 235 , 121 ,61, 5, 1);
-const obstacle3 = new Obstacle(480, 200, 100, 100, 197, 228 ,230, 5, 1);
-const obstacle4 = new Obstacle(480, 400, 100, 100, 43 ,38 ,34, 8, 1);
+const obstacle1 = new Obstacle(50, 400, 100, 100, 217, 59, 58, 8, 1);
+const obstacle2 = new Obstacle(50, 200, 100, 100, 235, 121, 61, 5, 1);
+const obstacle3 = new Obstacle(480, 200, 100, 100, 197, 228, 230, 5, 1);
+const obstacle4 = new Obstacle(480, 400, 100, 100, 43, 38, 34, 8, 1);
 
 //obstacles array
 let obstacles = [obstacle1, obstacle2, obstacle3, obstacle4];
@@ -274,21 +267,19 @@ class Log extends Obstacle {
     super(x, y, width, height, 139, 69, 19, speed, addSpeed);
   }
   update() {
-
     if (this.x >= -100) {
       this.x = this.x - (this.speed + this.addSpeed);
     } else if (this.x < -100) {
       this.x = 800;
     }
-    }
   }
+}
 
 const log1 = new Log(50, 100, 150, 100, 4, 1);
 const log2 = new Log(600, 100, 150, 100, 4, 1);
 
 //logs array
 const logs = [log1, log2];
-
 
 function mousePressed() {
   //character restart point when return button is pressed.
@@ -299,7 +290,7 @@ function mousePressed() {
     gameLives = startLives;
     score = 0;
   }
-  
+
   if (restartButton.isPressed(mouseX, mouseY)) {
     gameState = "playing";
     character1.x = startX;
@@ -339,9 +330,7 @@ function draw() {
   if (gameState === "start") {
     startscreen();
     startButton.draw();
-
   } else if (gameState === "playing") {
-
     for (let i = 0; i < obstacles.length; i++) {
       obstacles[i].update();
       obstacles[i].draw();
@@ -353,18 +342,15 @@ function draw() {
     }
     character1.draw();
     character1.update();
-     drawLives();
-     drawScore();
-
+    drawLives();
+    drawScore();
   } else if (gameState === "gameSucceeded") {
     gameWin();
-   restartButton.draw();
-   homeButton.draw();
-   
+    restartButton.draw();
+    homeButton.draw();
   } else if (gameState === "gameOver") {
     gameLose();
     homeButton.draw();
     restartButton.draw();
   }
-
 }
