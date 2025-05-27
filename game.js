@@ -5,8 +5,12 @@ let startLives = 2;
 let gameLives = startLives;
 let score = 0;
 
+<<<<<<< Updated upstream
 //line 9 of the code is added by courtesy of Stefan La
 let logSafeAreaBoarderWidth = 35;
+=======
+let gameState = "start";
+>>>>>>> Stashed changes
 
 function setup() {
   createCanvas(800, 600);
